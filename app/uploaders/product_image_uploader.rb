@@ -5,7 +5,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
 
   # I COMMENTED THE BELOW LINE OUT BECAUSE RMAGICK GEM WASNT INSTALLING PROPERLY
-  # include CarrierWave::RMagick
+   include CarrierWave::RMagick
 
   # include CarrierWave::MiniMagick
 
@@ -37,13 +37,13 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:
 
   # I COMMENTED THE BELOW CODE OUT BECAUSE RMAGICK GEM WASNT INSTALLING PROPERLY
-  #version :tiny do
-  #  process resize_to_fit: [100, 100]
-  #end
+  version :tiny do
+    process resize_to_fit: [100, 100]
+  end
 
-  #version :thumb do
-  #  process resize_to_fit: [300, 300]
-  #end
+  version :thumb do
+    process resize_to_fit: [300, 300]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
